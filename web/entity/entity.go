@@ -32,6 +32,9 @@ type AllSetting struct {
 	WebCertFile        string `json:"webCertFile" form:"webCertFile"`
 	WebKeyFile         string `json:"webKeyFile" form:"webKeyFile"`
 	WebBasePath        string `json:"webBasePath" form:"webBasePath"`
+	CaptchaEnable      bool   `json:"captchaEnable" form:"captchaEnable"`
+	CaptchaSiteKey     string `json:"captchaSiteKey" form:"captchaSiteKey"`
+	CaptchaSecret      string `json:"captchaSecret" form:"captchaSecret"`
 	TgBotEnable        bool   `json:"tgBotEnable" form:"tgBotEnable"`
 	TgBotToken         string `json:"tgBotToken" form:"tgBotToken"`
 	TgBotChatId        int    `json:"tgBotChatId" form:"tgBotChatId"`

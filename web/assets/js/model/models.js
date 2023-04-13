@@ -163,6 +163,9 @@ class AllSetting {
         this.webCertFile = "";
         this.webKeyFile = "";
         this.webBasePath = "/";
+        this.captchaEnable = false;
+        this.captchaSiteKey = "";
+        this.captchaSecret = "";
         this.tgBotEnable = false;
         this.tgBotToken = "";
         this.tgBotChatId = 0;

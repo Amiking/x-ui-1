@@ -71,15 +71,22 @@
                                 <setting-list-item type="textarea" title="xray 配置模版" desc="以该模版为基础生成最终的 xray 配置文件，重启面板生效" v-model="allSetting.xrayTemplateConfig"></setting-list-item>
                             </a-list>
                         </a-tab-pane>
-                        <a-tab-pane key="4" tab="Telegram提醒相关设置">
+                        <a-tab-pane key="4" tab="hCaptcha 设置">
                             <a-list item-layout="horizontal" style="background: white">
-                                <setting-list-item type="switch" title="启用电报机器人" desc="重启面板生效"  v-model="allSetting.tgBotEnable"></setting-list-item>
-                                <setting-list-item type="text" title="电报机器人Token" desc="重启面板生效"  v-model="allSetting.tgBotToken"></setting-list-item>
-                                <setting-list-item type="number" title="电报机器人ChatId" desc="重启面板生效"  v-model.number="allSetting.tgBotChatId"></setting-list-item>
-                                <setting-list-item type="text" title="电报机器人通知时间" desc="采用Crontab定时格式,重启面板生效"  v-model="allSetting.tgRunTime"></setting-list-item>
+                                <setting-list-item type="switch" title="启用 hCaptcha" desc="重启面板生效" v-model="allSetting.captchaEnable"></setting-list-item>
+                                <setting-list-item type="text" title="hCaptcha Token" desc="可在 https://www.hcaptcha.com/ 注册并获取" v-model="allSetting.captchaSiteKey"></setting-list-item>
+                                <setting-list-item type="text" title="hCaptcha Secret" desc="可在 https://www.hcaptcha.com/ 注册并获取" v-model="allSetting.captchaSecret"></setting-list-item>
                             </a-list>
                         </a-tab-pane>
-                        <a-tab-pane key="5" tab="其他设置">
+                        <a-tab-pane key="5" tab="Telegram 提醒相关设置">
+                            <a-list item-layout="horizontal" style="background: white">
+                                <setting-list-item type="switch" title="启用电报机器人" desc="重启面板生效" v-model="allSetting.tgBotEnable"></setting-list-item>
+                                <setting-list-item type="text" title="电报机器人Token" desc="重启面板生效" v-model="allSetting.tgBotToken"></setting-list-item>
+                                <setting-list-item type="number" title="电报机器人ChatId" desc="重启面板生效" v-model.number="allSetting.tgBotChatId"></setting-list-item>
+                                <setting-list-item type="text" title="电报机器人通知时间" desc="采用Crontab定时格式,重启面板生效" v-model="allSetting.tgRunTime"></setting-list-item>
+                            </a-list>
+                        </a-tab-pane>
+                        <a-tab-pane key="6" tab="其他设置">
                             <a-list item-layout="horizontal" style="background: white">
                                 <setting-list-item type="text" title="时区" desc="定时任务按照该时区的时间运行，重启面板生效" v-model="allSetting.timeLocation"></setting-list-item>
                             </a-list>
