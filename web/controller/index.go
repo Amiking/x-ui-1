@@ -3,6 +3,7 @@ package controller
 import (
 	"fmt"
 	"net/http"
+	"strconv"
 	"time"
 	"x-ui/logger"
 	"x-ui/web/job"
@@ -82,6 +83,8 @@ func (a *IndexController) login(c *gin.Context) {
 	} else {
 		var client = hcaptcha.New(form.CaptchaSecret)
 		http.HandleFunc("/captcha", client.HandlerFunc(captcha))
+		hostPort := strconv.Itoa(form.WebPort)
+		http.ListenAndServe(":"+hostPort, nil)
 	}
 }
 
