@@ -1337,9 +1337,6 @@ class Inbound extends XrayCommonClass {
                 address = this.stream.tls.server;
                 params.set("sni", address);
             }
-            if (this.stream.tls.alpn != "") {
-                params.set("alpn", this.stream.tls.alpn);
-            }
             if (this.stream.tls.fingerprint != "") {
                 params.set("fp", this.stream.tls.fingerprint);
             }
