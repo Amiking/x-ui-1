@@ -1107,7 +1107,6 @@ class Inbound extends XrayCommonClass {
         let type = 'none';
         let host = '';
         let path = '';
-        let alpn = '';
         let fingerprint = '';
         if (network === 'tcp') {
             let tcp = this.stream.tcp;
@@ -1150,9 +1149,6 @@ class Inbound extends XrayCommonClass {
             if (this.stream.tls.fingerprint != "") {
                 fingerprint = this.stream.reality.fingerprint;
             }
-            if (this.stream.tls.alpn != "") {
-                alpn = this.stream.tls.alpn;
-            }
         }
 
         let obj = {
@@ -1168,7 +1164,6 @@ class Inbound extends XrayCommonClass {
             path: path,
             tls: this.stream.security,
             sni: host,
-            alpn: alpn,
             fp: fingerprint,
         };
         return 'vmess://' + base64(JSON.stringify(obj, null, 2));
@@ -1239,9 +1234,6 @@ class Inbound extends XrayCommonClass {
             }
             if (this.stream.tls.fingerprint != "") {
                 params.set("fp", this.stream.tls.fingerprint);
-            }
-            if (this.stream.tls.alpn != "") {
-                params.set("alpn", this.stream.tls.alpn);
             }
         }
 
